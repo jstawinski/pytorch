@@ -33,6 +33,7 @@
   - titaiwangms
   - wschin
   - xadupre
+  - jstawinski
   mandatory_checks_name:
   - EasyCLA
   - Lint
@@ -553,6 +554,7 @@
   - zou3519
   - isuruf
   - Chillee
+  - jstawinski
   mandatory_checks_name:
   - EasyCLA
   - Lint
@@ -569,6 +571,7 @@
   - malfet
   - albanD
   - ptrblck
+  - jstawinski
   mandatory_checks_name:
   - EasyCLA
   - Lint
