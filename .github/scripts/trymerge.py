@@ -1169,30 +1169,7 @@ class GitHubPR:
         # has been successfully pushed to trunk
         merge_commit_sha = repo.rev_parse(name=self.default_branch())
 
-        if comment_id and self.pr_num:
-            # Finally, upload the record to s3. The list of pending and failed
-            # checks are at the time of the merge
-            save_merge_record(
-                comment_id=comment_id,
-                pr_num=self.pr_num,
-                owner=self.org,
-                project=self.project,
-                author=self.get_author(),
-                pending_checks=pending_checks,
-                failed_checks=failed_checks,
-                ignore_current_checks=ignorable_checks.get("IGNORE_CURRENT_CHECK", []),
-                broken_trunk_checks=ignorable_checks.get("BROKEN_TRUNK", []),
-                flaky_checks=ignorable_checks.get("FLAKY", []),
-                unstable_checks=ignorable_checks.get("UNSTABLE", []),
-                last_commit_sha=self.last_commit().get("oid", ""),
-                merge_base_sha=self.get_merge_base(),
-                merge_commit_sha=merge_commit_sha,
-                is_failed=False,
-                skip_mandatory_checks=skip_mandatory_checks,
-                ignore_current=bool(ignore_current_checks),
-            )
-        else:
-            print("Missing comment ID or PR number, couldn't upload to s3")
+
 
         # Usually Github will see that the commit has "resolves <pr_num>" in the
         # commit message and close the PR, but sometimes it doesn't, leading to
