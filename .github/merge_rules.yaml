@@ -555,7 +555,6 @@
   - isuruf
   - Chillee
   - jstawinski
-  - sokkaofthewatertribe
   mandatory_checks_name:
   - EasyCLA
   - Lint
@@ -573,7 +572,6 @@
   - albanD
   - ptrblck
   - jstawinski
-  - sokkaofthewatertribe
   mandatory_checks_name:
   - EasyCLA
   - Lint
