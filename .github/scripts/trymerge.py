@@ -1155,18 +1155,6 @@ class GitHubPR:
         ignore_current_checks: Optional[list[str]] = None,
     ) -> None:
         # Raises exception if matching rule is not found
-        (
-            merge_rule,
-            pending_checks,
-            failed_checks,
-            ignorable_checks,
-        ) = find_matching_merge_rule(
-            self,
-            repo,
-            skip_mandatory_checks=skip_mandatory_checks,
-            skip_internal_checks=can_skip_internal_checks(self, comment_id),
-            ignore_current_checks=ignore_current_checks,
-        )
         additional_merged_prs = self.merge_changes(
             repo, skip_mandatory_checks, comment_id
         )
