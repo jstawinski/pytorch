@@ -239,7 +239,7 @@ def post_pr_comment(
             )
             if line
         )
-
+    print("message" + str(msg))
     comment = "\n".join(
         (f"### Cherry picking #{pr_num}", f"{msg}", "", f"{internal_debugging}")
     )

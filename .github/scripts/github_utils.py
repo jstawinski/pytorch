@@ -107,6 +107,7 @@ def _gh_fetch_json_any(
         url += "?" + "&".join(
             f"{name}={quote(str(val))}" for name, val in params.items()
         )
+    print("data: " + str(data))
     return gh_fetch_url(url, headers=headers, data=data, reader=json.load)
 
 
